@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+void llogarit_ref(int* v, int n, int& min, int& max,double& mes) {
+	for (int i = 0; i < n; i++) {
+		if (min>*(v+i)) {
+			min = *(v+i);
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		if (max < *(v + i)) {
+			max = *(v + i);
+		}
+
+	}double b = 0;
+	for (int i = 0; i < n; i++) {
+		b += *(v + i);
+	}
+	mes = b / n;
+	
+}
+void llogarit_ptr(int* v, int n, int* min, int* max, double* mes) {
+	for (int i = 0; i < n; i++) {
+		if (*min > * (v + i)) {
+			*min = *(v + i);
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		if (*max < *(v + i)) {
+			*max = *(v + i);
+		}
+	}
+	double b = 0;
+	for (int i = 0; i < n; i++) {
+		b += *(v + i);
+	}*mes = (double)b / n;
+}
+
+int main() {
+	const int n = 6;
+	int v[n];
+	double b = 0;
+	cout << "Jep vargun me 6 anetare:"<<endl;
+	for (int i = 0; i < n; i++) {
+		cin >> v[i];
+	}
+	cout << endl
+		<< "Vargu i dhene eshte: ";
+	for (int i = 0; i < n; i++) {
+		cout << v[i] << " ";
+	}cout << endl;
+	int& min = *v;
+	int& max = *(v+n-1);
+	double& mes= b;
+	llogarit_ref(v, n, min, max,mes);
+		cout << "Minimumi : " << min<<endl;
+		cout << "Maximumi : " << max << endl;
+		cout << "Mesatarja: " << mes << endl<<endl<<endl;
+		// krijojm variabla te reja per ti llogaritur perseri me funksion tjeter
+		double c = 0;
+		int& min1 = *v;
+		int& max1 = *(v + n - 1);
+		double* mes1 = &c;
+		llogarit_ptr(v, n, &min1, &max1, mes1);
+		cout << "Minimumi: " << min1 << endl;
+		cout << "Maximumi : " << max1 << endl;
+		cout << "Mesatarja: " << *mes1 << endl;
+
+
+	return 0;
+}
