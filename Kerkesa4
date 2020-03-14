@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Personi {
+	string emri;
+	int mosha;
+	string ID;
+};
+void shtyp(Personi* p) {
+	cout << "Emri: " << p->emri << endl;
+	cout << "Mosha: " << p->mosha << endl;
+	cout << "Numri personal: " << p->ID << endl;
+};
+Personi* krijo(string emri, int mosha, string ID) {
+	Personi* x = new Personi;
+	x->emri = emri;
+	x->mosha = mosha;
+	x->ID = ID;
+	return x;
+}
+int main() {
+	Personi X = {
+		"Albion",19,"1172683122"
+	};
+	Personi* Y = krijo("Edon", 25, "19238552738");
+	shtyp(&X);
+	cout << endl;
+	shtyp(Y);
+	delete	Y;
+	return 0;
+}
