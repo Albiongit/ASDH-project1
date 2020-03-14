@@ -23,7 +23,7 @@ int main() {
 	Personi X = {
 		"Albion",19,"1172683122"
 	};
-	Personi* Y = krijo("Edon", 25, "19238552738");
+	Personi* Y = krijo("Edon", 25, "19238552738"); 
 	shtyp(&X);
 	cout << endl;
 	shtyp(Y);
