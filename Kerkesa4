@@ -30,4 +30,7 @@ int main() {
 	delete	Y;
 	return 0;
 }
-
+/*Unë, Albion Ademi, po deklaroj që jam autori origjinal dhe i vetëm i materialit 
+në të gjitha dokumentet e përfshira në kuadër të kësaj detyre. Me këtë dorëzim po e 
+vërtetoj që i kam kuptuar në nivel të kënaqshëm njësitë 
+përkatëse të kërkesave për të cilat kam ofruar zgjidhje në materialet e përfshira.*/
