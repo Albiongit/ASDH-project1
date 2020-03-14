@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+void kopjo(int* v, int n,int* v1) {
+	
+	v1 = new int[n];
+	for (int i = 0; i < n; i++) {
+		*(v1 + i) = *(v + i);
+	}
+
+}
+int main() {
+	
+	const int n = 5;
+	int v[n] = { 5,3,9,4,1 };
+	cout << "Vargu i dhene eshte: ";
+	for (int i = 0; i < n; i++) {
+		cout << *(v + i) << " ";
+	}cout << endl;
+	int* vk=new int;
+	kopjo(v, n,vk);
+	cout << "Vargu i kopjuar eshte: ";
+	for (int i = 0; i < n; i++) {
+		cout << *(v + i) << " ";
+	}cout << endl;
+	delete[] vk;
+
+
+
+	return 0;
+}
